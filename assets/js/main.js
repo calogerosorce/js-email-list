@@ -12,6 +12,7 @@ Inserire un bottone che al click faccia il fetch altre 10 mail (sostituendo le a
 
 const emailEl = document.getElementById('email')
 
+
 function randomEmail(response) {
     const tenEmailRandom = []
     for (i = 0; i < 10; i++) {
@@ -22,11 +23,17 @@ function randomEmail(response) {
                 if (success) {
                     console.log(response);
                     tenEmailRandom.push(response)
-                    emailEl.innerHTML = tenEmailRandom
+                    const newLi = document.createElement('li')
+                    newLi.textContent = response
+                    emailEl.append(newLi)
                 }
             })
     }
     console.log(tenEmailRandom);
+
 }
 
+
 randomEmail()
+
+
