@@ -35,7 +35,7 @@ function randomEmail(response) {
 }
 
 /*
-METHOD AXIOS
+//METHOD AXIOS
 
 function randomEmail(response) {
     let tenEmailRandom = []
