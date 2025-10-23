@@ -15,14 +15,15 @@ const url = 'https://flynn.boolean.careers/exercises/api/random/mail'
 
 function randomEmail(response) {
     for (i = 0; i < 10; i++) {
-        console.log(response);
+        fetch('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then(res => res.json())
+            .then(data => {
+                const { success, response } = data
+                if (success) {
+                    console.log(response);
+                }
+            })
     }
 }
 
-fetch('https://flynn.boolean.careers/exercises/api/random/mail')
-    .then(res => res.json())
-    .then(data => {
-        const { success, response } = data
-        console.log(success, response);
-
-    })
+console.log(randomEmail());
