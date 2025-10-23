@@ -10,8 +10,7 @@ Inserire un bottone che al click faccia il fetch altre 10 mail (sostituendo le a
 
 */
 
-
-const url = 'https://flynn.boolean.careers/exercises/api/random/mail'
+const emailEl = document.getElementById('email')
 
 function randomEmail(response) {
     const tenEmailRandom = []
@@ -23,10 +22,11 @@ function randomEmail(response) {
                 if (success) {
                     console.log(response);
                     tenEmailRandom.push(response)
+                    emailEl.innerHTML = tenEmailRandom
                 }
             })
     }
     console.log(tenEmailRandom);
 }
 
-console.log(randomEmail());
+randomEmail()
