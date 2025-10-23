@@ -13,7 +13,7 @@ Inserire un bottone che al click faccia il fetch altre 10 mail (sostituendo le a
 const emailEl = document.getElementById('email')
 const buttonEl = document.getElementById('button')
 
-
+// Method fetch
 function randomEmail(response) {
     let tenEmailRandom = []
     emailEl.innerHTML = " "
@@ -32,12 +32,37 @@ function randomEmail(response) {
             })
     }
     console.log(tenEmailRandom);
+}
+
+/*
+METHOD AXIOS
+
+function randomEmail(response) {
+    let tenEmailRandom = []
+    emailEl.innerHTML = " "
+    for (i = 0; i < 10; i++) {
+        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then(res => {
+                const { success, response } = res.data
+                if (success) {
+                    console.log(response);
+                    tenEmailRandom.push(response)
+                    const newLi = document.createElement('li')
+                    newLi.textContent = response
+                    emailEl.append(newLi)
+                }
+            })
+    }
+    console.log(tenEmailRandom);
 
 }
+
+*/
 
 
 buttonEl.addEventListener('click', (e) => {
     e.preventDefault()
     randomEmail()
 })
+
 
