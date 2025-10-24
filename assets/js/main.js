@@ -23,7 +23,7 @@ function randomEmail(response) {
             .then(data => {
                 const { success, response } = data
                 if (success) {
-                    console.log(response);
+                    //console.log(response);
                     tenEmailRandom.push(response)
                     const newLi = document.createElement('li')
                     newLi.textContent = response
@@ -31,7 +31,7 @@ function randomEmail(response) {
                 }
             })
     }
-    console.log(tenEmailRandom);
+    //console.log(tenEmailRandom);
 }
 
 /*
@@ -45,7 +45,7 @@ function randomEmail(response) {
             .then(res => {
                 const { success, response } = res.data
                 if (success) {
-                    console.log(response);
+                    //console.log(response);
                     tenEmailRandom.push(response)
                     const newLi = document.createElement('li')
                     newLi.textContent = response
@@ -53,7 +53,7 @@ function randomEmail(response) {
                 }
             })
     }
-    console.log(tenEmailRandom);
+    //console.log(tenEmailRandom);
 
 }
 
@@ -61,9 +61,7 @@ function randomEmail(response) {
 
 
 
-buttonEl.addEventListener('click', (e) => {
-    e.preventDefault()
-    randomEmail()
-})
+buttonEl.addEventListener('click', randomEmail)
+
 
 
